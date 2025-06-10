@@ -112,7 +112,7 @@ public class PaymentController {
     public ResponseEntity<String> handleStripeWebhook(
             @RequestBody String payload,
             @RequestHeader("Stripe-Signature") String sigHeader) {
-        String endpointSecret = "whsec_2dfa0f15e8c56de2f6276030279fd32ddd3a1f2ff96018d534f87dbef7c61089";
+        String endpointSecret = "xxx";
         try {
             Event event = Webhook.constructEvent(payload, sigHeader, endpointSecret);
             log.info("Stripe event processing, type: " + event.getType().toString());
